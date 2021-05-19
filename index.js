@@ -1,10 +1,9 @@
 const Discord = require("discord.js")
 const client = new Discord.Client()
-const curseWords = require("cursewords.json")
-const config = require("config.json")
-const prefix = config.prefix;
+const curseWords = require("./cursewords.json")
+const prefix = "c!"
 let amountof = "0"
-require("dotenv").config()
+const token = "ODQ0NjQwODUwMjY0NTg4MzEw.YKVXFw.ppnnbDTGKYYOeYIfEqqGTXwGm0sq"
 
 client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`)
@@ -60,4 +59,4 @@ client.on("message", msg => {
   }
 })
 
-client.login(process.env.TOKEN)
+client.login(token)
