@@ -486,7 +486,9 @@ const WOKCommands = require("wokcommands");
 const { default: messageHandler } = require("wokcommands/dist/message-handler");
 module.exports = { amountof: `${amountof}` };
 
-client.user.setActivity('chat', { type: 'WATCHING' });
+client.on("ready", () => {
+	client.user.setActivity('chat', { type: 'WATCHING' });
+});
 
 client.on("ready", () => {
   new WOKCommands(client, {
