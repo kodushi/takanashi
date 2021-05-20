@@ -481,7 +481,6 @@ const curseWords = [
 const prefix = "c!";
 const guildId = "799819756914868264";
 let amountof = "0";
-const token = "ODQ0NjQwODUwMjY0NTg4MzEw.YKVXFw.ktPbgYygDRbgt8iitpEy7d7E6-Q";
 require("./ExtendedMessage");
 const WOKCommands = require("wokcommands");
 const { default: messageHandler } = require("wokcommands/dist/message-handler");
@@ -759,4 +758,4 @@ client.on("message", (msg) => {
 });
 
 
-client.login(token);
+client.login(process.env.DISCORD_TOKEN);
