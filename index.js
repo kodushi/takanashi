@@ -56,7 +56,7 @@ client.on("message", (msg) => {
       amountof++;
       let censored = msg.content;
       let user = msg.author;
-	if (!msg.member.guild.me.hasPermission("MANAGE_ROLES") || !msg.member.guild.me.hasPermission("MANAGE_MESSAGES")) return msg.channel.send("I don't have the required permissions to censor this.")
+	if (!msg.member.guild.me.hasPermission("MANAGE_MESSAGES")) return msg.channel.send("I don't have the required permissions to censor this.")
       const embed = new Discord.MessageEmbed()
         .setColor("#FF0000")
         .setTitle("Your message has been moderated")
@@ -72,12 +72,8 @@ client.on("message", (msg) => {
       let myRole = msg.guild.roles.cache.find((role) => role.name === "Muted");
       msg.author.send(embed);
       msg.channel.send(otherembed);
-      msg.member.roles.add(myRole);
       msg.delete();
       console.log(`${user.tag} was moderated for ${censored}`);
-      setTimeout(function () {
-        msg.author.roles.remove(role).catch(console.error);
-      }, 1800000);
     }
   }
 
