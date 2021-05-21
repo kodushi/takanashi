@@ -110,6 +110,7 @@ client.on("message", (msg) => {
     if (!slowtime) {
       slowtime = 30;
     }
+    if (slowtime < 0) return msg.inlineReply("I can't go back in time. (Please use a positive number)")
     if (isNaN(slowtime)) return msg.inlineReply("Alphabetical times don't exist, sorry! (c!slowmode <time> <reason>)")
     let slowreply = `Set a ${slowtime} second slowmode for: ${slowreason}`;
     if (!slowreason) {
@@ -181,6 +182,7 @@ client.on("message", (msg) => {
     if (!banreason) {
       banreply = `Banned user ${user.tag} for ${banlong} days. No reason was given`;
     }
+    if (banlong < 0) return msg.inlineReply("I can't ban for negative days. (Please use a positive number)")
     const embed = new Discord.MessageEmbed()
       .setColor("#FF0000")
       .setTitle("You have been banned.")
