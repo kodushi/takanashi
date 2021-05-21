@@ -696,7 +696,7 @@ client.on("message", (msg) => {
       .setTitle("You have been unmuted")
       .setDescription(`A moderator has unmuted you!`)
       .setFooter("Takanashi")
-      .setTimestap();
+      .setTimestamp();
 
     user.send(embed);
     member.roles.remove(mutedrole);
