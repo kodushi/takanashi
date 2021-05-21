@@ -478,6 +478,10 @@ const curseWords = [
   "willy",
   "xrated",
   "xxx",
+  "f4ck",
+  "f5ck",
+  "sh1t",
+  "$h!t",
 ];
 const prefix = "c!";
 const guildId = "799819756914868264";
