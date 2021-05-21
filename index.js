@@ -356,6 +356,8 @@ const curseWords = [
   "phonesex",
   "phuck",
   "phuk",
+  "54ck",
+  "74ck",
   "phuked",
   "phuking",
   "phukked",
