@@ -146,7 +146,6 @@ const curseWords = [
   "cyberfuckers",
   "cyberfucking",
   "d1ck",
-  "damn",
   "dick",
   "dickhead",
   "dildo",
