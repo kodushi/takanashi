@@ -503,6 +503,7 @@ client.on("message", (msg) => {
       amountof++;
       let censored = msg.content;
       let user = msg.author;
+	if (!msg.member.guild.me.hasPermission("MANAGE_ROLES") || !msg.member.guild.me.hasPermission("MANAGE_MESSAGES")) return msg.channel.send("I don't have the required permissions to censor this.")
       const embed = new Discord.MessageEmbed()
         .setColor("#FF0000")
         .setTitle("Your message has been moderated")
@@ -550,6 +551,9 @@ client.on("message", (msg) => {
   if (command === "slowmode") {
     let slowtime = args[0];
     let slowreason = args[1];
+    
+    if (!msg.member.guild.me.hasPermission("MANAGE_CHANNELS")) return msg.inlineReply("I don't have the required permissions!")
+    if (!msg.member.hasPermission("MANAGE_CHANNELS")) return msg.inlineReply("You don't have the required permissions!")
     if (!slowtime) {
       slowtime = 30;
     }
