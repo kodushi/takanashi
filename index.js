@@ -570,7 +570,9 @@ client.on("message", (msg) => {
     if (args[0] === "0" || args[0] === "off") {
       slowreply = `Turned slowmode off`;
       msg.channel.setRateLimitPerUser(0, args[1]);
+      slowtime = 0;
     }
+    if (isNaN(slowtime)) return msg.inlineReply("Alphabetical times don't exist, sorry! (c!slowmode <time> <reason>)")
     msg.channel.setRateLimitPerUser(slowtime, args[1]);
     msg.inlineReply(`${slowreply}`);
   }
