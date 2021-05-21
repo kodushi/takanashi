@@ -665,7 +665,7 @@ client.on("message", (msg) => {
       .setFooter("Takanashi")
       .setTimestamp();
     const member = msg.guild.members.resolve(user);
-    if (!member.roles.cache.has(mutedrole))
+    if (member.roles.cache.has(mutedrole))
       return msg.inlineReply("This user is already muted");
     user.send(embed);
     msg.inlineReply(mutereply);
