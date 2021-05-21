@@ -559,6 +559,7 @@ client.on("message", (msg) => {
     if (!slowtime) {
       slowtime = 30;
     }
+    if (isNaN(slowtime)) return msg.inlineReply("Alphabetical times don't exist, sorry! (c!slowmode <time> <reason>)")
     let slowreply = `Set a ${slowtime} second slowmode for: ${slowreason}`;
     if (!slowreason) {
       slowreply = `Set a ${slowtime} second slowmode. No reason was given`;
