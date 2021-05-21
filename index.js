@@ -29,7 +29,7 @@ const antiSpam = new AntiSpam({
 	removeMessages: true // If the bot should remove all the spam messages when taking action on a user!
 	// And many more options... See the documentation.
 });
-const curseWords = require('cursewords.js')
+const curseWords = require('cursewords')
 
 const prefix = "c!";
 const guildId = "799819756914868264";
