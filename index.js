@@ -187,7 +187,7 @@ client.on("message", (msg) => {
       .setFooter("Takanashi")
       .setTimestamp();
     const member = msg.guild.members.resolve(user);
-    if(msg.mentions.members.first().roles.highest.position > msg.guild.members.resolve(bot.user).roles.highest.position) return message.channel.send("My highest role is lower than the mentioned user's role");
+    if(member.roles.highest.position > msg.guild.members.resolve(bot.user).roles.highest.position) return message.channel.send("My highest role is lower than the mentioned user's role");
     
     user.send(embed);
     msg.inlineReply(banreply);
