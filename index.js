@@ -170,10 +170,10 @@ client.on("message", (msg) => {
     if (user.bannable) return msg.inlineReply("I cannot ban this user");
     if (!msg.member.guild.me.hasPermission("SEND_MESSAGES"))
       return msg.author.send("I cannot send messages in that channel");
+    if (isNaN(banlong)) return msg.inlineReply("Second argument must be a time. (c!ban <time (default 7 days)> <reason (optional)>)")
     if (!banlong) {
       banlong = 7;
     }
-
     let banreply = `Banned user ${user.tag} for ${banreason}. This ban is ${banlong} days long.`;
     if (!banreason) {
       banreply = `Banned user ${user.tag} for ${banlong} days. No reason was given`;
