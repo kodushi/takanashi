@@ -150,6 +150,7 @@ client.on("message", (msg) => {
       .setFooter(`Takanashi`)
       .setTimestamp();
     const member = msg.guild.members.resolve(user);
+if(member.roles.highest.position > msg.guild.members.resolve(client.user).roles.highest.position) return msg.inlineReply("My role is too low :c");
     user.send(embed);
     msg.inlineReply(kickreply);
     member.kick();
@@ -187,7 +188,7 @@ client.on("message", (msg) => {
       .setFooter("Takanashi")
       .setTimestamp();
     const member = msg.guild.members.resolve(user);
-    if(member.roles.highest.position > msg.guild.members.resolve(client.user).roles.highest.position) return msg.inlineReply("My highest role is lower than the mentioned user's role");
+    if(member.roles.highest.position > msg.guild.members.resolve(client.user).roles.highest.position) return msg.inlineReply("My role is too low :c");
     
     user.send(embed);
     msg.inlineReply(banreply);
@@ -221,6 +222,7 @@ client.on("message", (msg) => {
       .setFooter("Takanashi")
       .setTimestamp();
     const member = msg.guild.members.resolve(user);
+    if(member.roles.highest.position > msg.guild.members.resolve(client.user).roles.highest.position) return msg.inlineReply("My role is too low :c");
     if (member.roles.cache.has(mutedrole))
       return msg.inlineReply("This user is already muted");
     user.send(embed);
@@ -243,6 +245,7 @@ client.on("message", (msg) => {
       );
     if (!user) return msg.inlineReply("Please mention a valid user");
     const member = msg.guild.members.resolve(user);
+if(member.roles.highest.position > msg.guild.members.resolve(client.user).roles.highest.position) return msg.inlineReply("My role is too low :c");
     if (member.roles.cache.has(mutedrole))
       return msg.inlineReply("This user is not muted");
     const embed = new Discord.MessageEmbed()
