@@ -52,7 +52,7 @@ client.on("ready", () => {
 
 client.on("message", (msg) => {
   for (var i = 0; i < curseWords.length; i++) {
-    if (msg.content.includes(curseWords[i]) && !msg.author.bot) {
+    if (msg.content.toLowerCase().includes(curseWords[i]) && !msg.author.bot) {
       amountof++;
       let censored = msg.content;
       let user = msg.author;
